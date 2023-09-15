@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="
+        http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+<!--for DI of Literals-->
+
+<!--<bean id="student"  class="com.tnsif.dependencyinjection.Student">
+	<constructor-arg name="studentName" value="Tushar" />
+	<constructor-arg name="id" value="1"></constructor-arg>
+		
+</bean>
+
+<bean id="student2"  class="com.tnsif.dependencyinjection.Student">
+	<constructor-arg name="studentName" value="Latha" />
+	<constructor-arg name="id" value="2"></constructor-arg>
+		
+</bean>-->
+
+
+<bean id="upi" class="com.tnsif.di.Upi"></bean>
+
+<!-- DI in the form of Object reference-->
+<bean id="amazon" class="com.tnsif.di.Amazon">
+	<property name="u" ref="upi"/>	
+</bean>
+
+<bean id="myntra" class="com.tnsif.di.Myntra">
+	<property name="u" ref="upi"/>	
+</bean>
+
+</beans>
